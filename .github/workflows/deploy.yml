@@ -18,15 +18,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Clean npm cache
+        run: npm cache clean --force
       - name: Create .npmrc
         run: echo "legacy-peer-deps=true" > .npmrc
+      - name: Remove package-lock.json
+        run: rm -f package-lock.json
       - name: Install dependencies
-        run: npm install
-      - name: Build with Vite
+        run: |
+          npm install --verbose
+          echo "Checking if vite is installed:"
+          ls -la node_modules/.bin/ | grep vite || echo "vite not found"
+      - name: Build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-        run: npx vite build
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
