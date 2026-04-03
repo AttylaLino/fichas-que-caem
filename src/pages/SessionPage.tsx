@@ -5,7 +5,7 @@ import './SessionPage.css';
 // Configuração de conteúdo para cada sessão
 const sessionContent = {
   1: {
-    title: "Quais suas expectativsa e aprendizados até o momento?",
+    title: "Quais suas expectativas e aprendizados até o momento?",
     subtitle: "Abertura e Primeiras Discussões",
     description: "Considere a Abertura, as apresentações sobre o panoramas de Diversidade, Equidade e Inclusão e a Mesa-redonda sobre Benchmark, Ações e Resultados.",
     placeholder: "Escreva seus aprendizados, expectativas, sentimentos e palavras-chave...",
