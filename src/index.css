@@ -1,0 +1,312 @@
+/* ============================================
+   FICHAS QUE CAEM - Estilos Globais
+   Tema: Diversidade, Equidade e Inclusão
+   Paleta: Inspirada em arco-íris e acolhimento
+   ============================================ */
+
+:root {
+  /* Paleta arco-íris DEI */
+  --rainbow-red: #ff6b6b;
+  --rainbow-orange: #ffa07a;
+  --rainbow-yellow: #ffd93d;
+  --rainbow-green: #6bcf7f;
+  --rainbow-blue: #4ecdc4;
+  --rainbow-indigo: #5d5fef;
+  --rainbow-violet: #c77dff;
+  --rainbow-pink: #ff69eb;
+  
+  /* Cores base */
+  --bg-primary: #fefefe;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-light: #718096;
+  
+  /* Gradientes */
+  --gradient-rainbow: linear-gradient(
+    135deg,
+    var(--rainbow-red) 0%,
+    var(--rainbow-orange) 14%,
+    var(--rainbow-yellow) 28%,
+    var(--rainbow-green) 42%,
+    var(--rainbow-blue) 56%,
+    var(--rainbow-indigo) 70%,
+    var(--rainbow-violet) 84%,
+    var(--rainbow-pink) 100%
+  );
+  
+  --gradient-soft: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.1) 0%,
+    rgba(255, 160, 122, 0.1) 25%,
+    rgba(107, 207, 127, 0.1) 50%,
+    rgba(78, 205, 196, 0.1) 75%,
+    rgba(199, 125, 255, 0.1) 100%
+  );
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --shadow-rainbow: 0 8px 24px rgba(199, 125, 255, 0.2);
+  
+  /* Espaçamentos */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Bordas */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  /* Transições */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+}
+
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+    'Helvetica Neue', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: var(--spacing-md);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Links e botões */
+a {
+  color: var(--rainbow-indigo);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--rainbow-violet);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-normal);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Inputs */
+input, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  outline: none;
+  transition: all var(--transition-normal);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--rainbow-indigo);
+  box-shadow: 0 0 0 3px rgba(93, 95, 239, 0.1);
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--rainbow-violet),
+    var(--rainbow-indigo)
+  );
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--rainbow-indigo),
+    var(--rainbow-blue)
+  );
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animação de "ficha caindo" */
+@keyframes chipFalling {
+  0% {
+    opacity: 1;
+    transform: translateY(-50px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(20px) rotate(180deg) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px) rotate(360deg) scale(0.5);
+  }
+}
+
+/* Utilitários */
+.fade-in {
+  animation: fadeIn var(--transition-normal);
+}
+
+.slide-down {
+  animation: slideDown var(--transition-normal);
+}
+
+/* Acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Foco visível para navegação por teclado */
+*:focus-visible {
+  outline: 3px solid var(--rainbow-indigo);
+  outline-offset: 2px;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 2rem;
+    --spacing-2xl: 2.5rem;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Modo escuro (opcional, para acessibilidade) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --text-primary: #f7fafc;
+    --text-secondary: #e2e8f0;
+    --text-light: #cbd5e0;
+  }
+}
