@@ -79,7 +79,7 @@
 .session-subtitle h2 {
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: #2d3748 !important;
   margin-bottom: var(--spacing-sm);
   text-align: center;
 }
@@ -87,7 +87,7 @@
 .session-subtitle p {
   font-size: 1.125rem;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: #4a5568 !important;
   text-align: center;
   margin: 0;
 }
